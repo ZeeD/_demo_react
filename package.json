@@ -1,17 +1,29 @@
 {
-    "name": "demo_react",
-    "dependencies": {
-        "react": "*"
-    },
-    "devDependencies": {
-        "react-app-rewired": "*",
-        "react-scripts": "*",
-        "react-dev-utils": "*"
-    },
-    "scripts": {
-        "start": "react-app-rewired start"
-    },
-    "description": "",
-    "repository": {},
-    "license": ""
+  "name": "demo_react",
+  "dependencies": {
+    "react": "*"
+  },
+  "devDependencies": {
+    "react-app-rewired": "*",
+    "react-scripts": "*",
+    "react-dev-utils": "*"
+  },
+  "scripts": {
+    "start": "react-app-rewired start"
+  },
+  "description": "",
+  "repository": {},
+  "license": "AGPL-3.0-or-later",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
