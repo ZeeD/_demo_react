@@ -2,5 +2,16 @@
     "name": "demo_react",
     "dependencies": {
         "react": "*"
-    }
+    },
+    "devDependencies": {
+        "react-app-rewired": "*",
+        "react-scripts": "*",
+        "react-dev-utils": "*"
+    },
+    "scripts": {
+        "start": "react-app-rewired start"
+    },
+    "description": "",
+    "repository": {},
+    "license": ""
 }
