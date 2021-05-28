@@ -1,0 +1,6 @@
+<svg width="32" height="32" version="1.1" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+ <text x="11.806158" y="10.227795" fill="#000000" font-family="sans-serif" font-size="5px" style="line-height:1.25" xml:space="preserve"><tspan x="11.806158" y="10.227795" font-size="5px"/></text>
+ <rect x="8" y="8" width="23" height="23" rx="4" ry="11" fill="none" stroke="#000"/>
+ <path d="m18 3a10 8 0 0 1 2 9 10 8 0 0 1-11 4 10 8 0 0 1-9-6 10 8 0 0 1 5-9" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" style="paint-order:fill markers stroke"/>
+ <path d="m23 3-0.3 6 5 4-6 2-2 6-3-5-6-0.2 4-5-2-6 6 2z" fill="#fe0000" fill-opacity=".7" style="paint-order:fill markers stroke"/>
+</svg>
