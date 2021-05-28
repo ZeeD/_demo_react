@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import MyRouter from './MyRouter';
+
 const dom = <React.StrictMode>
-    <p>Hello react</p>
+    <MyRouter />
 </React.StrictMode>;
 
-ReactDOM.render(dom, document.querySelector('body'));
+ReactDOM.render(dom, document.querySelector('#root'));
