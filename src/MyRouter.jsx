@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 import MyComponentFoo from './MyComponentFoo';
 import MyComponentBar from './MyComponentBar';
 import MyContainer from './MyContainer';
@@ -10,12 +10,11 @@ import MyMainContainerGC from './generic_container/MyMainContainer';
 import MyPageOneGC from './generic_container/MyPageOne';
 import MyPageTwoGC from './generic_container/MyPageTwo';
 
-
 class Index extends Component {
     render() {
         const lis = [];
         for (const href of ['/foo', '/bar', '/embed']) {
-            const li = <li><a href={href}>{href}</a></li>
+            const li = <li key={href}><Link to={href}>{href}</Link></li>
             lis.push(li);
         }
         const ul = <ul>{lis}</ul>;
@@ -29,13 +28,13 @@ class MyRouter extends Component {
         const ret = <BrowserRouter>
             <Switch>
                 <Route exact path="/" component={Index} />
-                <Route exact path="/foo" render={(props) => <MyContainer middle={<MyComponentFoo {...props} />} />} />
-                <Route exact path="/bar" render={(props) => <MyContainer middle={<MyComponentBar {...props} />} />} />
+                <Route exact path="/foo" render={(props) => <MyContainer middle={<MyComponentFoo {...props} />} {...props} />} />
+                <Route exact path="/bar" render={(props) => <MyContainer middle={<MyComponentBar {...props} />} {...props} />} />
                 <Route exact path="/embed" component={MyComponentWithEmbedPng} />
                 <Route exact path="/cnp/1" component={MyPageOneCP} />
                 <Route exact path="/cnp/2" component={MyPageTwoCP} />
-                <Route exact path="/gc/1" render={(props) => <MyMainContainerGC mainBody={<MyPageOneGC {...props} />} />} />
-                <Route exact path="/gc/2" render={(props) => <MyMainContainerGC mainBody={<MyPageTwoGC {...props} />} />} />
+                <Route exact path="/gc/1" render={(props) => <MyMainContainerGC mainBody={<MyPageOneGC {...props} />} {...props} />} />
+                <Route exact path="/gc/2" render={(props) => <MyMainContainerGC mainBody={<MyPageTwoGC {...props} />} {...props} />} />
             </Switch>
         </BrowserRouter>;
 
