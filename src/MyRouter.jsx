@@ -4,6 +4,11 @@ import MyComponentFoo from './MyComponentFoo';
 import MyComponentBar from './MyComponentBar';
 import MyContainer from './MyContainer';
 import MyComponentWithEmbedPng from './MyComponentWithEmbedPng';
+import MyPageOneCP from './copy_n_paste/MyPageOne';
+import MyPageTwoCP from './copy_n_paste/MyPageTwo';
+import MyMainContainerGC from './generic_container/MyMainContainer';
+import MyPageOneGC from './generic_container/MyPageOne';
+import MyPageTwoGC from './generic_container/MyPageTwo';
 
 
 class Index extends Component {
@@ -24,9 +29,13 @@ class MyRouter extends Component {
         const ret = <BrowserRouter>
             <Switch>
                 <Route exact path="/" component={Index} />
-                <Route exact path="/foo" render={(props) => <MyContainer middle={<MyComponentFoo />} {...props} />} />
-                <Route exact path="/bar" render={(props) => <MyContainer middle={<MyComponentBar />} {...props} />} />
+                <Route exact path="/foo" render={(props) => <MyContainer middle={<MyComponentFoo {...props} />} />} />
+                <Route exact path="/bar" render={(props) => <MyContainer middle={<MyComponentBar {...props} />} />} />
                 <Route exact path="/embed" component={MyComponentWithEmbedPng} />
+                <Route exact path="/cnp/1" component={MyPageOneCP} />
+                <Route exact path="/cnp/2" component={MyPageTwoCP} />
+                <Route exact path="/gc/1" render={(props) => <MyMainContainerGC mainBody={<MyPageOneGC {...props} />} />} />
+                <Route exact path="/gc/2" render={(props) => <MyMainContainerGC mainBody={<MyPageTwoGC {...props} />} />} />
             </Switch>
         </BrowserRouter>;
 
