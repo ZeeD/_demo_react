@@ -1,0 +1,242 @@
+{
+  "charset": "utf-8",
+  "headers": {
+    "content-type": "text/plain; charset=utf-8",
+    "plural-forms": "nplurals = 2; plural = (n != 1);",
+    "language": "en",
+    "mime-version": "1.0",
+    "content-transfer-encoding": "8bit"
+  },
+  "translations": {
+    "": {
+      "": {
+        "msgid": "",
+        "msgstr": [
+          "Content-Type: text/plain; charset=utf-8\nPlural-Forms: nplurals = 2; plural = (n != 1);\nLanguage: en\nmime-version: 1.0\nContent-Transfer-Encoding: 8bit\n"
+        ]
+      },
+      "Titolo, personaggio, genere..": {
+        "msgid": "Titolo, personaggio, genere..",
+        "msgstr": ["Search.."]
+      },
+      "Go back": { "msgid": "Go back", "msgstr": ["Go back"] },
+      "Profile": { "msgid": "Profile", "msgstr": ["Profile"] },
+      "Languages": { "msgid": "Languages", "msgstr": ["Languages"] },
+      "Preference": { "msgid": "Preference", "msgstr": ["Preference"] },
+      "Settings Success": {
+        "msgid": "Settings Success",
+        "msgstr": ["Settings Saved"]
+      },
+      "Select Language": {
+        "msgid": "Select Language",
+        "msgstr": ["Select Language"]
+      },
+      "Update Language": {
+        "msgid": "Update Language",
+        "msgstr": ["Update Language"]
+      },
+      "This content is for registered users only. Please sign in or register to view the content.": {
+        "msgid": "This content is for registered users only. Please sign in or register to view the content.",
+        "msgstr": [
+          "This content is for registered users only. Please sign in or register to view the content."
+        ]
+      },
+      "Close": { "msgid": "Close", "msgstr": ["Close"] },
+      "More Episodes": {
+        "msgid": "More Episodes",
+        "msgstr": ["More Episodes"]
+      },
+      "Detail": { "msgid": "Detail", "msgstr": ["Detail"] },
+      "Watch Trailer": {
+        "msgid": "Watch Trailer",
+        "msgstr": ["Watch Trailer"]
+      },
+      "Season": { "msgid": "Season", "msgstr": ["Season"] },
+      "Genres": { "msgid": "Genres", "msgstr": ["Genres"] },
+      "Created by": { "msgid": "Created by", "msgstr": ["Created by"] },
+      "Rating": { "msgid": "Rating", "msgstr": ["Rating"] },
+      "Preferences": { "msgid": "Preferences", "msgstr": ["Preferences"] },
+      "Sign In": { "msgid": "Sign In", "msgstr": ["Sign In"] },
+      "Logout": { "msgid": "Logout", "msgstr": ["Logout"] },
+      "Sign Up": { "msgid": "Sign Up", "msgstr": ["Sign Up"] },
+      "Gamification": { "msgid": "Gamification", "msgstr": ["Gamification"] },
+      "Decline": { "msgid": "Decline", "msgstr": ["Decline"] },
+      "Accept": { "msgid": "Accept", "msgstr": ["Accept"] },
+      "Policy terms": { "msgid": "Policy terms", "msgstr": ["Policy terms"] },
+      "condition": {
+        "msgid": "condition",
+        "msgstr": [
+          "Condizionelorem ipsum, quia dolor sit, amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora ncidunt, ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit sse, quam nihil molestiae onsequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur?"
+        ]
+      },
+      "Name": { "msgid": "Name", "msgstr": ["Name"] },
+      "Surname": { "msgid": "Surname", "msgstr": ["Surname"] },
+      "Nationality": { "msgid": "Nationality", "msgstr": ["Nationality"] },
+      "City": { "msgid": "City", "msgstr": ["City"] },
+      "Postal Code": { "msgid": "Postal Code", "msgstr": ["Postal Code"] },
+      "M": { "msgid": "M", "msgstr": ["M"] },
+      "F": { "msgid": "F", "msgstr": ["F"] },
+      "yes": { "msgid": "yes", "msgstr": ["Yes"] },
+      "no": { "msgid": "no", "msgstr": ["No"] },
+      "yyyy": { "msgid": "yyyy", "msgstr": ["yyyy"] },
+      "mm": { "msgid": "mm", "msgstr": ["mm"] },
+      "dd": { "msgid": "dd", "msgstr": ["dd"] },
+      "Change Password": {
+        "msgid": "Change Password",
+        "msgstr": ["Change Password"]
+      },
+      "Update Profile": {
+        "msgid": "Update Profile",
+        "msgstr": ["Update Profile"]
+      },
+      "Invalid field": {
+        "msgid": "Invalid field",
+        "msgstr": ["Invalid field"]
+      },
+      "Update succesful": {
+        "msgid": "Update succesful",
+        "msgstr": ["Update succesful"]
+      },
+      "Email": { "msgid": "Email", "msgstr": ["Email"] },
+      "Recovery": { "msgid": "Recovery", "msgstr": ["Recovery"] },
+      "Verification code": {
+        "msgid": "Verification code",
+        "msgstr": ["Verification code"]
+      },
+      "New password": { "msgid": "New password", "msgstr": ["New password"] },
+      "Recovery title here": {
+        "msgid": "Recovery title here",
+        "msgstr": ["Recovery"]
+      },
+      "Recovery message": {
+        "msgid": "Recovery message",
+        "msgstr": ["Recovery"]
+      },
+      "Recovery error title here": {
+        "msgid": "Recovery error title here",
+        "msgstr": ["Error during data recovery."]
+      },
+      "This message warns user on error on recovery": {
+        "msgid": "This message warns user on error on recovery",
+        "msgstr": ["Error during data recovery."]
+      },
+      "We'll send you the details to change the password.": {
+        "msgid": "We'll send you the details to change the password.",
+        "msgstr": ["We'll send you the details to change the password."]
+      },
+      "Password": { "msgid": "Password", "msgstr": ["Password"] },
+      "Password Recovery": {
+        "msgid": "Password Recovery",
+        "msgstr": ["Password Recovery"]
+      },
+      "Invalid Field": {
+        "msgid": "Invalid Field",
+        "msgstr": ["Invalid Field"]
+      },
+      "Invalid Email": {
+        "msgid": "Invalid Email",
+        "msgstr": ["Invalid Email"]
+      },
+      "Invalid Password": {
+        "msgid": "Invalid Password",
+        "msgstr": ["Invalid Password"]
+      },
+      "SignIn error title here": {
+        "msgid": "SignIn error title here",
+        "msgstr": ["Error during Sign in"]
+      },
+      "SignIn message title here": {
+        "msgid": "SignIn message title here",
+        "msgstr": ["SignIn"]
+      },
+      "The user is Logged": {
+        "msgid": "The user is Logged",
+        "msgstr": ["The user is Logged"]
+      },
+      "Sign In description text here": {
+        "msgid": "Sign In description text here",
+        "msgstr": ["Sign In to watch all the series and films"]
+      },
+      "I have read and accept the terms of all these policies.": {
+        "msgid": "I have read and accept the terms of all these policies.",
+        "msgstr": ["I have read and accept the terms of all these policies."]
+      },
+      "Sign up": { "msgid": "Sign up", "msgstr": ["Sign up"] },
+      "Registration error title here": {
+        "msgid": "Registration error title here",
+        "msgstr": ["Error during the registration"]
+      },
+      "Registration message title here": {
+        "msgid": "Registration message title here",
+        "msgstr": ["Registration"]
+      },
+      "This messages asks user check the activation email link in his email": {
+        "msgid": "This messages asks user check the activation email link in his email",
+        "msgstr": ["Check the activation email"]
+      },
+      "Check Policy": { "msgid": "Check Policy", "msgstr": ["Check Policy"] },
+      "Sign Up description test here": {
+        "msgid": "Sign Up description test here",
+        "msgstr": ["Create here a new account"]
+      },
+      "Old Password": { "msgid": "Old Password", "msgstr": ["Old Password"] },
+      "New Password": { "msgid": "New Password", "msgstr": ["New Password"] },
+      "Confirm New Password": {
+        "msgid": "Confirm New Password",
+        "msgstr": ["Confirm New Password"]
+      },
+      "The password must be at least 8 caracters long, contain a special character.": {
+        "msgid": "The password must be at least 8 caracters long, contain a special character.",
+        "msgstr": [
+          "The password must be at least 8 caracters long, contain a special character."
+        ]
+      },
+      "Choose a new password": {
+        "msgid": "Choose a new password",
+        "msgstr": ["Choose a new password"]
+      },
+      "Update Password": {
+        "msgid": "Update Password",
+        "msgstr": ["Update Password"]
+      },
+      "Change password title here": {
+        "msgid": "Change password title here",
+        "msgstr": ["Change password"]
+      },
+      "Your password changed": {
+        "msgid": "Your password changed",
+        "msgstr": ["Your password is changed"]
+      },
+      "Change password error title here": {
+        "msgid": "Change password error title here",
+        "msgstr": ["Error during the password change."]
+      },
+      "This is an error message warns user on change password": {
+        "msgid": "This is an error message warns user on change password",
+        "msgstr": ["Error message due to the password change."]
+      },
+      "Sign-In to Play OnDemand": {
+        "msgid": "Sign-In to Play OnDemand",
+        "msgstr": ["Sign-In to Play OnDemand"]
+      },
+      "BORN": { "msgid": "BORN", "msgstr": [""] },
+      "No biography available": {
+        "msgid": "No biography available",
+        "msgstr": [""]
+      },
+      "Nothing here": { "msgid": "Nothing here", "msgstr": [""] },
+      "Nothig here": { "msgid": "Nothig here", "msgstr": [""] },
+      "Search for \"": { "msgid": "Search for \"", "msgstr": [""] },
+      "\" results": { "msgid": "\" results", "msgstr": [""] },
+      "ErrorHandler message ": {
+        "msgid": "ErrorHandler message ",
+        "msgstr": [""]
+      },
+      "ErrorMessagePlayer": { "msgid": "ErrorMessagePlayer", "msgstr": [""] },
+      "ErrorMessageComponent": {
+        "msgid": "ErrorMessageComponent",
+        "msgstr": [""]
+      }
+    }
+  }
+}

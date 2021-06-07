@@ -9,11 +9,12 @@ import MyPageTwoCP from './copy_n_paste/MyPageTwo';
 import MyMainContainerGC from './generic_container/MyMainContainer';
 import MyPageOneGC from './generic_container/MyPageOne';
 import MyPageTwoGC from './generic_container/MyPageTwo';
+import MyLocaledComponent from './localetest/MyLocaledComponent';
 
 class Index extends Component {
     render() {
         const lis = [];
-        for (const href of ['/foo', '/bar', '/embed']) {
+        for (const href of ['/foo', '/bar', '/embed', '/cnp/1', '/cnp/2', '/gc/1', '/gc/2', '/localized']) {
             const li = <li key={href}><Link to={href}>{href}</Link></li>
             lis.push(li);
         }
@@ -35,6 +36,7 @@ class MyRouter extends Component {
                 <Route exact path="/cnp/2" component={MyPageTwoCP} />
                 <Route exact path="/gc/1" render={(props) => <MyMainContainerGC mainBody={<MyPageOneGC {...props} />} {...props} />} />
                 <Route exact path="/gc/2" render={(props) => <MyMainContainerGC mainBody={<MyPageTwoGC {...props} />} {...props} />} />
+                <Route exact path="/localized" component={MyLocaledComponent} />
             </Switch>
         </BrowserRouter>;
 
