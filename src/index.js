@@ -1,10 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { StrictMode } from 'react';
+import { render } from 'react-dom';
 
-import MyRouter from './MyRouter';
+import Router from './common/Router';
 
-const dom = <React.StrictMode>
-    <MyRouter />
-</React.StrictMode>;
-
-ReactDOM.render(dom, document.querySelector('#root'));
+render(<StrictMode><Router /></StrictMode>, document.querySelector('#root'));
