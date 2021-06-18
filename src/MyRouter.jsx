@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
-import MyComponentFoo from './MyComponentFoo';
-import MyComponentBar from './MyComponentBar';
-import MyContainer from './MyContainer';
-import MyComponentWithEmbedPng from './MyComponentWithEmbedPng';
+
+import MyComponentFoo from './crosslinks/MyComponentFoo';
+import MyComponentBar from './crosslinks/MyComponentBar';
+import MyContainer from './crosslinks/MyContainer';
+import MyComponentWithEmbedPng from './embed_images/MyComponentWithEmbedPng';
 import MyPageOneCP from './copy_n_paste/MyPageOne';
 import MyPageTwoCP from './copy_n_paste/MyPageTwo';
 import MyMainContainerGC from './generic_container/MyMainContainer';
@@ -14,7 +15,10 @@ import MyLocaledComponent from './localetest/MyLocaledComponent';
 class Index extends Component {
     render() {
         const lis = [];
-        for (const href of ['/foo', '/bar', '/embed', '/cnp/1', '/cnp/2', '/gc/1', '/gc/2', '/localized']) {
+        for (const href of ['/foo', '/bar',
+                            '/embed',
+                            '/cnp/1', '/cnp/2', '/gc/1', '/gc/2',
+                            '/localized']) {
             const li = <li key={href}><Link to={href}>{href}</Link></li>
             lis.push(li);
         }

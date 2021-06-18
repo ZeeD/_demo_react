@@ -4,16 +4,10 @@ import MyHeader from './MyHeader';
 import MyFooter from './MyFooter';
 
 class MyMainContainer extends Component {
-    constructor(props) {
-        super(props)
-
-        this.mainBody = props.mainBody;
-    }
-
     render() {
         return <>
             <MyHeader />
-            {this.mainBody}
+            {this.props.mainBody}
             <MyFooter />
         </>;
     }
