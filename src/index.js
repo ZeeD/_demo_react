@@ -1,6 +1,6 @@
 import React, { StrictMode } from 'react';
 import { render } from 'react-dom';
 
-import Router from './common/Router';
+import App from './common/App';
 
-render(<StrictMode><Router /></StrictMode>, document.querySelector('#root'));
+render(<StrictMode><App /></StrictMode>, document.querySelector('#root'));
