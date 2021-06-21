@@ -21,7 +21,7 @@ export default class App extends Component {
                     <Route exact path="/locales"><Locales /></Route>
                     <Route exact path="/crosslinks/one"><One to="/crosslinks/two" /></Route>
                     <Route exact path="/crosslinks/two"><Two to="/crosslinks/one" /></Route>
-                    <Route exact path="/partial_state/section/:cb" component={Section} />
+                    <Route exact path="/partial_state/section/:id" component={Section} />
                 </Switch>
                 <Footer />
             </BrowserRouter>

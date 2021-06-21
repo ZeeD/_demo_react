@@ -1,33 +1,45 @@
 import React, { Component } from 'react';
+import { equals } from '../common/utils';
 
 
 export default class Section extends Component {
-    state = {
-        counter: 13
-    }
-
     constructor(props) {
         super(props);
-        console.info('constructor', JSON.stringify(this.props, null, 4), new Date());
+        this.state = {};
     }
 
     componentDidMount() {
-        console.info('componentDidMount', JSON.stringify(this.props, null, 4), new Date());
-        this.setState(this.props.location.state);
+        return this.componentDidMountOrUpdateProps();
     }
 
-    componentWillUnmount() {
-        console.info('componentWillUnmount', JSON.stringify(this.props, null, 4), new Date());
+    componentDidUpdate(oldProps) {
+        if (!equals(oldProps, this.props))
+            return this.componentDidUpdateProps();
+    }
+
+    componentDidUpdateProps() {
+        return this.componentDidMountOrUpdateProps();
+    }
+
+    componentDidMountOrUpdateProps() {
+        if (this.state[this.props.match.params.id])
+            return;
+
+        fetch(`/partial_state_${this.props.match.params.id}.json`)
+            .then(response => response.json())
+            .then(value => this.setState({
+                [this.props.match.params.id]: value
+            }));
     }
 
     render() {
-        return <>
-            <p>{this.state.counter}</p>
-            <button onClick={() => {
-                this.setState({
-                    counter: this.state.counter + 1
-                });
-            }}>clickme</button>
-        </>;
+        return <dl>
+            <dt>id</dt>
+            <dd>{this.props.match.params.id}</dd>
+            <dt>payload</dt>
+            <dd>{JSON.stringify(this.state[this.props.match.params.id])}</dd>
+            <dt>state</dt>
+            <dd>{JSON.stringify(this.state)}</dd>
+        </dl>;
     }
 };
