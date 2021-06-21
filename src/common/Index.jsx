@@ -8,15 +8,15 @@ export default class Index extends Component {
             '/',
             '/locales',
             '/crosslinks/one', '/crosslinks/two',
-            '/partial_state/section'
+            '/partial_state/section/0'
         ])
             lis.push(<li key={href}><Link to={href}>{href}</Link></li>);
 
 
         for (const [href, counter] of [
-            ['/partial_state/section', 1],
-            ['/partial_state/section', 2],
-            ['/partial_state/section', 3]
+            ['/partial_state/section/123', 1],
+            ['/partial_state/section/456', 2],
+            ['/partial_state/section/789', 3]
         ])
             lis.push(<li key={href + "_" + counter}><Link to={{
                 pathname: href,

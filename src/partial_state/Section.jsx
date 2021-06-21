@@ -6,8 +6,18 @@ export default class Section extends Component {
         counter: 13
     }
 
+    constructor(props) {
+        super(props);
+        console.info('constructor', JSON.stringify(this.props, null, 4), new Date());
+    }
+
     componentDidMount() {
+        console.info('componentDidMount', JSON.stringify(this.props, null, 4), new Date());
         this.setState(this.props.location.state);
+    }
+
+    componentWillUnmount() {
+        console.info('componentWillUnmount', JSON.stringify(this.props, null, 4), new Date());
     }
 
     render() {
