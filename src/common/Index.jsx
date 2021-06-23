@@ -10,7 +10,8 @@ export default class Index extends PageComponent {
             '/',
             '/locales',
             '/crosslinks/one', '/crosslinks/two',
-            '/partial_state/section/one', '/partial_state/section/two'
+            '/partial_state/section/one', '/partial_state/section/two',
+            '/ctx'
         ])
             lis.push(<li key={href}><Link to={href}>{href}</Link></li>);
 

@@ -9,6 +9,7 @@ import Locales from '../locales/Locales';
 import One from '../crosslinks/One';
 import Two from '../crosslinks/Two';
 import Section from '../partial_state/Section';
+import ContextProvider from '../ctx/ContextProvider';
 
 import AppComponente from './appstate/AppComponent';
 
@@ -32,6 +33,8 @@ export default class App extends AppComponente {
                         render={props => <Section {...props}
                             appState={this.appState}
                             setAppState={this.setAppState} />} />
+                    <Route exact path="/ctx"
+                        render={props => <ContextProvider {...props} />} />
                 </Switch>
                 <Footer />
             </BrowserRouter>
