@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import Footer from '../common/Footer';
@@ -10,25 +10,16 @@ import One from '../crosslinks/One';
 import Two from '../crosslinks/Two';
 import Section from '../partial_state/Section';
 
+import AppComponente from './appstate/AppComponent';
 
 
-export default class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            appState: {}
-        }
-    }
-
-    setAppState = newValue => {
-        this.setState({ appState: { ...this.state.appState, ...newValue } });
-    };
-
+export default class App extends AppComponente {
     render() {
         return <>
             <BrowserRouter>
                 <Header />
-                <Index appState={this.state.appState}
+                <Index {...this.props}
+                    appState={this.appState}
                     setAppState={this.setAppState} />
                 <Switch>
                     <Route exact path="/"
@@ -37,12 +28,14 @@ export default class App extends Component {
                         render={props => <Locales {...props} />} />
                     <Route exact path="/crosslinks/one"
                         render={props => <One to="/crosslinks/two" {...props} />} />
-                    <Route exact path="/crosslinks/two"
-                        render={props => <Two to="/crosslinks/one" {...props} />} />
-                    <Route exact path="/partial_state/section/:id"
-                        render={props => <Section {...props}
-                            appState={this.state.appState}
-                            setAppState={this.setAppState} />} />
+                    <Route exact path="/crosslinks/two">
+                        <Two to="/crosslinks/one" {...props} />
+                    </Route>
+                    <Route exact path="/partial_state/section/:id">
+                        <Section {...this.props}
+                            appState={this.appState}
+                            setAppState={this.setAppState} />
+                    </Route>
                 </Switch>
                 <Footer />
             </BrowserRouter>

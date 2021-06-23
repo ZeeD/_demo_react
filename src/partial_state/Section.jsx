@@ -2,7 +2,7 @@ import React from 'react';
 import sleep from 'sleep-promise';
 import { withStyles } from '@material-ui/core/styles';
 
-import PageComponent from '../common/PageComponent';
+import PageComponent from '../common/appstate/PageComponent';
 
 const styles = {
     dlLoading: {

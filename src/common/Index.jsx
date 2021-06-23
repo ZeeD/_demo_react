@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-import PageComponent from './PageComponent';
+import PageComponent from './appstate/PageComponent';
 
 export default class Index extends PageComponent {
     render() {
