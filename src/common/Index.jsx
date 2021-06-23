@@ -1,7 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from "react-router-dom";
 
-export default class Index extends Component {
+import PageComponent from './PageComponent';
+
+export default class Index extends PageComponent {
     render() {
         const lis = [];
         for (const href of [
@@ -12,6 +14,11 @@ export default class Index extends Component {
         ])
             lis.push(<li key={href}><Link to={href}>{href}</Link></li>);
 
-        return <ul>{lis}</ul>;
+        const loading = `${this.appState.loading}`;
+
+        return <>
+            <pre>loading: `{loading}`</pre>
+            <ul>{lis}</ul>
+        </>;
     }
 }

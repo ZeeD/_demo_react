@@ -10,18 +10,39 @@ import One from '../crosslinks/One';
 import Two from '../crosslinks/Two';
 import Section from '../partial_state/Section';
 
+
+
 export default class App extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            appState: {}
+        }
+    }
+
+    setAppState = newValue => {
+        this.setState({ appState: { ...this.state.appState, ...newValue } });
+    };
+
     render() {
         return <>
             <BrowserRouter>
                 <Header />
-                <Index />
+                <Index appState={this.state.appState}
+                    setAppState={this.setAppState} />
                 <Switch>
-                    <Route exact path="/"><EmbedImages /></Route>
-                    <Route exact path="/locales"><Locales /></Route>
-                    <Route exact path="/crosslinks/one"><One to="/crosslinks/two" /></Route>
-                    <Route exact path="/crosslinks/two"><Two to="/crosslinks/one" /></Route>
-                    <Route exact path="/partial_state/section/:id" component={Section} />
+                    <Route exact path="/"
+                        render={props => <EmbedImages {...props} />} />
+                    <Route exact path="/locales"
+                        render={props => <Locales {...props} />} />
+                    <Route exact path="/crosslinks/one"
+                        render={props => <One to="/crosslinks/two" {...props} />} />
+                    <Route exact path="/crosslinks/two"
+                        render={props => <Two to="/crosslinks/one" {...props} />} />
+                    <Route exact path="/partial_state/section/:id"
+                        render={props => <Section {...props}
+                            appState={this.state.appState}
+                            setAppState={this.setAppState} />} />
                 </Switch>
                 <Footer />
             </BrowserRouter>

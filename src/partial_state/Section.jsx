@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import sleep from 'sleep-promise';
 import { withStyles } from '@material-ui/core/styles';
 
-import { equals } from '../common/utils';
-
+import PageComponent from '../common/PageComponent';
 
 const styles = {
     dlLoading: {
@@ -15,54 +14,39 @@ const styles = {
 };
 
 
-export default withStyles(styles)(class Section extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {};
-    }
-
-    componentDidMount() {
-        return this.componentDidMountOrUpdateProps();
-    }
-
-    componentDidUpdate(oldProps) {
-        if (!equals(oldProps, this.props))
-            return this.componentDidUpdateProps();
-    }
-
-    componentDidUpdateProps() {
-        return this.componentDidMountOrUpdateProps();
-    }
-
+export default withStyles(styles)(class Section extends PageComponent {
     componentDidMountOrUpdateProps() {
-        if (this.state[this.props.match.params.id])
+        if (this.appState[this.props.match.params.id])
             return;
 
-        this.setState({
-            loading: true
-        }, () => sleep(2000)
-            .then(() => fetch(`/partial_state_${this.props.match.params.id}.json`)
-                .then(response => response.json())
-                .then(value => this.setState({
-                    [this.props.match.params.id]: value
-                })))
-            .then(() => this.setState({
+        const then = () => sleep(2000)
+            .then(() => fetch(`/partial_state_${this.props.match.params.id}.json`))
+            .then(response => response.json())
+            .then(value => this.setAppState({
+                [this.props.match.params.id]: value,
                 loading: false
-            })));
+            }));
+
+
+        if (!this.appState.loading)
+            this.setAppState({ loading: true })
+                .then(then);
+        else
+            then();
     }
 
     render() {
         const { classes } = this.props;
 
-        const dlClassName = this.state.loading ? classes.dlLoading : classes.dl;
+        const dlClassName = this.appState.loading ? classes.dlLoading : classes.dl;
 
         return <dl className={dlClassName}>
             <dt>id</dt>
             <dd>{this.props.match.params.id}</dd>
             <dt>payload</dt>
-            <dd>{JSON.stringify(this.state[this.props.match.params.id])}</dd>
+            <dd>{JSON.stringify(this.appState[this.props.match.params.id])}</dd>
             <dt>state</dt>
-            <dd>{JSON.stringify(this.state)}</dd>
+            <dd>{JSON.stringify(this.appState)}</dd>
         </dl>;
     }
 });
