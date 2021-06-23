@@ -6,7 +6,11 @@
         "react-router-dom": "^5.2.0",
         "react-scripts": "3.4.1",
         "node-sass": "^4.14.1",
-        "ttag": "^1.7.22"
+        "ttag": "^1.7.22",
+        "sleep-promise": "*",
+        "@material-ui/core": "^4.11.0",
+        "@material-ui/icons": "^4.9.1",
+        "@material-ui/lab": "^4.0.0-alpha.56"
     },
     "devDependencies": {
         "react-app-rewired": "*",
