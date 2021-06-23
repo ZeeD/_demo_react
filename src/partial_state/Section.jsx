@@ -15,7 +15,13 @@ const styles = {
 
 
 export default withStyles(styles)(class Section extends PageComponent {
+    componentWillUnmount() {
+        this.setAppState({ loading: false })
+    }
+
     componentDidMountOrUpdateProps() {
+        super.componentDidMountOrUpdateProps();
+
         if (this.appState[this.props.match.params.id])
             return;
 
