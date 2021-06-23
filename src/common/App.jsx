@@ -18,9 +18,7 @@ export default class App extends AppComponente {
         return <>
             <BrowserRouter>
                 <Header />
-                <Index {...this.props}
-                    appState={this.appState}
-                    setAppState={this.setAppState} />
+                <Index appState={this.appState} setAppState={this.setAppState} />
                 <Switch>
                     <Route exact path="/"
                         render={props => <EmbedImages {...props} />} />
@@ -28,14 +26,12 @@ export default class App extends AppComponente {
                         render={props => <Locales {...props} />} />
                     <Route exact path="/crosslinks/one"
                         render={props => <One to="/crosslinks/two" {...props} />} />
-                    <Route exact path="/crosslinks/two">
-                        <Two to="/crosslinks/one" {...props} />
-                    </Route>
-                    <Route exact path="/partial_state/section/:id">
-                        <Section {...this.props}
+                    <Route exact path="/crosslinks/two"
+                        render={props => <Two to="/crosslinks/one" {...props} />} />
+                    <Route exact path="/partial_state/section/:id"
+                        render={props => <Section {...props}
                             appState={this.appState}
-                            setAppState={this.setAppState} />
-                    </Route>
+                            setAppState={this.setAppState} />} />
                 </Switch>
                 <Footer />
             </BrowserRouter>

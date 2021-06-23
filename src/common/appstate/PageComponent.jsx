@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { equals } from '../common/utils';
+import { equals } from '../../common/utils';
 
 export default class PageComponent extends Component {
     static propTypes = {
