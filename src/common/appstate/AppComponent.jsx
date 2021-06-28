@@ -1,6 +1,6 @@
 import { Component } from 'react';
 
-export default class App extends Component {
+export default class AppComponent extends Component {
     get appState() {
         return (this.state || {}).appState || {};
     }

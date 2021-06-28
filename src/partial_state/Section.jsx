@@ -1,8 +1,8 @@
 import React from 'react';
+import { Component } from 'react';
 import sleep from 'sleep-promise';
 import { withStyles } from '@material-ui/core/styles';
 
-import PageComponent from '../common/appstate/PageComponent';
 import StateContext from '../common/statecontext/StateContext';
 
 const styles = {
@@ -15,7 +15,7 @@ const styles = {
 };
 
 
-export default withStyles(styles)(class Section extends PageComponent {
+export default withStyles(styles)(class Section extends Component {
     static contextType = StateContext
 
     componentWillUnmount() {
@@ -24,11 +24,9 @@ export default withStyles(styles)(class Section extends PageComponent {
         setLoading2(false);
     }
 
-    componentDidMountOrUpdateProps() {
-        super.componentDidMountOrUpdateProps();
-
+    componentDidMount() {
         const { loading2, setLoading2 } = this.context;
-
+        const {  }
 
         if (this.appState[this.props.match.params.id])
             return;

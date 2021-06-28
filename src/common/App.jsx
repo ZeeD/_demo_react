@@ -1,5 +1,8 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Component } from 'react';
+import { BrowserRouter } from "react-router-dom";
+import { Route } from "react-router-dom";
+import { Switch } from "react-router-dom";
 
 import Footer from '../common/Footer';
 import Header from '../common/Header';
@@ -11,11 +14,10 @@ import Two from '../crosslinks/Two';
 import Section from '../partial_state/Section';
 import ContextProvider from '../ctx/ContextProvider';
 
-import AppComponente from './appstate/AppComponent';
 import StateContext from './statecontext/StateContext';
 
 
-export default class App extends AppComponente {
+export default class App extends Component {
     render() {
         return <>
             <StateContext.Provider value={StateContext.value(this, 'loading2')}>
