@@ -26,7 +26,6 @@ export default withStyles(styles)(class Section extends Component {
 
     componentDidMount() {
         const { loading2, setLoading2 } = this.context;
-        const {  }
 
         if (this.appState[this.props.match.params.id])
             return;
