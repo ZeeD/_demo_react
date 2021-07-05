@@ -13,17 +13,17 @@ export default class Index extends Component {
         const lis = [];
         for (const href of [
             '/',
-            '/locales',
+            '/locales', '/locales/set',
             '/crosslinks/one', '/crosslinks/two',
             '/partial_state/section/one', '/partial_state/section/two',
             '/ctx'
         ])
             lis.push(<li key={href}><Link to={href}>{href}</Link></li>);
 
-        const { loading2 } = this.context;
+        const { loading } = this.context.state;
 
         return <>
-            <pre>loading2: `{`${loading2}`}`</pre>
+            <pre>loading: `{`${loading}`}`</pre>
             <ul>{lis}</ul>
         </>;
     }

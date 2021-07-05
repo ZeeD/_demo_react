@@ -1,16 +1,31 @@
 import React, { Component } from 'react';
 import { t, addLocale, useLocale } from 'ttag';
 
-const en_po_json = require('./en.po.json');
-const it_po_json = require('./it.po.json');
-const example_json = require('./example.json');
+import StateContext from '../common/statecontext/StateContext';
+
+import en_po_json from './en.po.json';
+import it_po_json from './it.po.json';
+import example_json from './example.json';
 
 export default class Locales extends Component {
+    static contextType = StateContext
+
+    componentDidMount() {
+        const { localesLoaded } = this.context.state;
+        const { setState } = this.context;
+
+        if (!localesLoaded)
+            for (const [localeName, localeUrl] of [['en', en_po_json],
+            ['it', it_po_json],
+            ['example', example_json]])
+                addLocale(localeName, localeUrl);
+
+        setState({ localesLoaded: true });
+    }
+
     render() {
-        addLocale('en', en_po_json);
-        addLocale('it', it_po_json);
-        addLocale('example', example_json)
-        useLocale('it');
+        const { currentLocale } = this.context.state;
+        useLocale(currentLocale || 'it');
 
         const orig = 'Titolo, personaggio, genere..';
         const localized = t`Titolo, personaggio, genere..`;

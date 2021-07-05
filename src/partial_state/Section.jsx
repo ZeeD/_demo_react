@@ -18,46 +18,49 @@ const styles = {
 export default withStyles(styles)(class Section extends Component {
     static contextType = StateContext
 
-    componentWillUnmount() {
-        const { setLoading2 } = this.context;
+    constructor(props) {
+        super(props);
+        props.history.listen((location, action) => {
+            // location is an object like window.location
+            console.log(action, location.pathname, location.state)
+        });
+    }
 
-        setLoading2(false);
+    componentWillUnmount() {
+        const { setState } = this.context;
+
+        setState({ loading: false });
     }
 
     componentDidMount() {
-        const { loading2, setLoading2 } = this.context;
+        const { state, setState } = this.context;
 
-        if (this.appState[this.props.match.params.id])
+        if (state[this.props.match.params.id])
             return;
 
-        if (!loading2)
-            setLoading2(true);
-
-        sleep(2000)
-            .then(() => fetch(`/partial_state_${this.props.match.params.id}.json`))
-            .then(response => response.json())
-            .then(value => {
-                setLoading2(false);
-
-                this.setAppState({
-                    [this.props.match.params.id]: value
-                })
-            });
+        setState({ loading: true },
+                 () => sleep(2000)
+                    .then(() => fetch(`/partial_state_${this.props.match.params.id}.json`))
+                    .then(response => response.json())
+                    .then(value => setState({
+                        loading: false,
+                        [this.props.match.params.id]: value
+                    })));
     }
 
     render() {
         const { classes } = this.props;
-        const { loading2 } = this.context;
+        const { state } = this.context;
 
-        const dlClassName = loading2 ? classes.dlLoading : classes.dl;
+        const dlClassName = state.loading ? classes.dlLoading : classes.dl;
 
         return <dl className={dlClassName}>
             < dt > id</dt >
             <dd>{this.props.match.params.id}</dd>
             <dt>payload</dt>
-            <dd>{JSON.stringify(this.appState[this.props.match.params.id])}</dd>
+            <dd>{JSON.stringify(state[this.props.match.params.id])}</dd>
             <dt>state</dt>
-            <dd>{JSON.stringify(this.appState)}</dd>
+            <dd>{JSON.stringify(state)}</dd>
         </dl >;
     }
 });

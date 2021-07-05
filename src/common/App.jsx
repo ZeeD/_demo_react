@@ -9,6 +9,7 @@ import Header from '../common/Header';
 import Index from '../common/Index';
 import EmbedImages from '../embed_images/EmbedImages';
 import Locales from '../locales/Locales';
+import ChangeLocales from '../locales/ChangeLocales';
 import One from '../crosslinks/One';
 import Two from '../crosslinks/Two';
 import Section from '../partial_state/Section';
@@ -18,21 +19,28 @@ import StateContext from './statecontext/StateContext';
 
 
 export default class App extends Component {
+    state = {
+        loading: true
+    };
+
     render() {
         return <>
-            <StateContext.Provider value={StateContext.value(this, 'loading2')}>
+            <StateContext.Provider value={StateContext.value(this)}>
                 <BrowserRouter>
                     <Header />
-                    <Index appState={this.appState} setAppState={this.setAppState} />
+                    <Index />
                     <Switch>
-                        <Route exact path="/"
-                            render={props => <EmbedImages {...props} />} />
+                        <Route exact path="/"><EmbedImages /></Route>
                         <Route exact path="/locales"
                             render={props => <Locales {...props} />} />
-                        <Route exact path="/crosslinks/one"
-                            render={props => <One to="/crosslinks/two" {...props} />} />
-                        <Route exact path="/crosslinks/two"
-                            render={props => <Two to="/crosslinks/one" {...props} />} />
+                        <Route exact path="/locales/set"
+                            render={props => <ChangeLocales {...props} />} />
+                        <Route exact path="/crosslinks/one">
+                            <One to="/crosslinks/two" />
+                        </Route>
+                        <Route exact path="/crosslinks/two">
+                            <Two to="/crosslinks/one" />
+                        </Route>
                         <Route exact path="/partial_state/section/:id"
                             render={props => <Section {...props}
                                 appState={this.appState}
