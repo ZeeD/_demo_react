@@ -16,7 +16,8 @@ export default class Index extends Component {
             '/locales', '/locales/set',
             '/crosslinks/one', '/crosslinks/two',
             '/partial_state/section/one', '/partial_state/section/two',
-            '/ctx'
+            '/ctx',
+            'ts'
         ])
             lis.push(<li key={href}><Link to={href}>{href}</Link></li>);
 

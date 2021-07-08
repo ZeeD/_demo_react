@@ -14,6 +14,7 @@ import One from '../crosslinks/One';
 import Two from '../crosslinks/Two';
 import Section from '../partial_state/Section';
 import ContextProvider from '../ctx/ContextProvider';
+import Test from '../ts/Test';
 
 import StateContext from './statecontext/StateContext';
 
@@ -47,6 +48,7 @@ export default class App extends Component {
                                 setAppState={this.setAppState} />} />
                         <Route exact path="/ctx"
                             render={props => <ContextProvider {...props} />} />
+                        <Route exact path="/ts"><Test /></Route>
                     </Switch>
                     <Footer />
                 </BrowserRouter>

@@ -1,23 +1,31 @@
 {
     "name": "demo_react",
     "dependencies": {
+        "@material-ui/core": "^4.11.0",
+        "@material-ui/icons": "^4.9.1",
+        "@material-ui/lab": "^4.0.0-alpha.56",
+        "@types/jest": "^26.0.24",
+        "@types/node": "^16.0.1",
+        "@types/react": "^17.0.14",
+        "@types/react-dom": "^17.0.9",
+        "node-sass": "^4.14.1",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
         "react-router-dom": "^5.2.0",
         "react-scripts": "3.4.1",
-        "node-sass": "^4.14.1",
-        "ttag": "^1.7.22",
         "sleep-promise": "*",
-        "@material-ui/core": "^4.11.0",
-        "@material-ui/icons": "^4.9.1",
-        "@material-ui/lab": "^4.0.0-alpha.56"
+        "ttag": "^1.7.22"
     },
     "devDependencies": {
+        "flow-bin": "^0.154.0",
         "react-app-rewired": "*",
-        "react-dev-utils": "*"
+        "react-dev-utils": "*",
+        "typescript": "^4.3.5"
     },
     "scripts": {
-        "start": "react-app-rewired start"
+        "start": "react-app-rewired start",
+        "build": "tsc",
+        "flow": "flow"
     },
     "description": "",
     "repository": {},
